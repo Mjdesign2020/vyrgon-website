@@ -3,231 +3,362 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VYRGON — Built for the Fight | India-first MMA Platform</title>
-<meta name="description" content="VYRGON is an India-first MMA platform being built to help athletes get discovered, connect with opportunities and take their careers further. Coming soon.">
+<title>VYRGON | India-first MMA platform</title>
+<meta name="description" content="VYRGON is an India-first MMA platform, built for the world. Get discovered, connect with brands, events and gyms, and take your fighting career further. App coming soon.">
+<meta name="theme-color" content="#0B0B0B">
+<meta property="og:title" content="VYRGON | Powering Fighters. Building Champions.">
+<meta property="og:description" content="An India-first MMA platform being built for fighters, brands, organisers, gyms and fans. Join the early list.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="VYRGON — Built for the Fight">
-<meta property="og:description" content="Powering Fighters. Building Champions. Join the early list for India's upcoming MMA platform.">
-<!-- TODO: add og:image (1200x630) and og:url once real assets / domain exist -->
-<meta name="theme-color" content="#171717">
-<!-- TODO: replace with real favicon file -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23171717'/%3E%3Cpath d='M6 8h5l5 12 5-12h5L18 25h-4z' fill='%23F4512A'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anta&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js'</script>
 <style>
 :root{
-  --orange:#F4512A; --charcoal:#171717; --warm:#FAF9F6; --white:#FFFFFF; --grey:#777777; --line:#E8E7E3;
-  --display:'Anta',system-ui,sans-serif; --body:'Manrope',system-ui,sans-serif;
-  --p:min(calc(100vw/894),calc(100svh/541));
-  --gutter:clamp(20px,5vw,72px);
+  --bg:#0B0B0B; --s1:#141414; --s2:#1B1B1B; --s3:#242424; --line:#2A2A2A;
+  --fg:#FAF9F6; --mut:#A3A19B; --dim:#6f6d68;
+  --o:#F4512A; --o2:#FF622D; --charcoal:#171717;
+  --disp:'Anta',system-ui,sans-serif; --body:'Manrope',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{font-family:var(--body);background:var(--warm);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,video{display:block;max-width:100%}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:-999px;top:8px;background:var(--orange);color:#fff;padding:10px 16px;z-index:200;border-radius:6px}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:2px solid var(--o);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--o);color:#171717;padding:10px 16px;border-radius:8px;z-index:100;font-weight:700}
 .skip:focus{left:8px}
-h1,h2,h3,.disp{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:1.02;letter-spacing:.01em}
-.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gutter)}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.eyebrow{font:700 .78rem var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--o);margin-bottom:16px}
+.h2{font:400 clamp(2rem,4.6vw,3.4rem)/1.05 var(--disp);text-transform:uppercase;text-wrap:balance}
+.lead{color:var(--mut);font-size:1.1rem;max-width:56ch;margin-top:18px}
+.o{color:var(--o)}
 section{position:relative}
-.eyebrow{font-family:var(--display);font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:12px;margin-bottom:22px}
-.eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
-.h2{font-size:clamp(2.1rem,5.6vw,4.6rem);margin-bottom:28px}
-.lead{font-size:clamp(1.02rem,1.5vw,1.2rem);max-width:56ch;color:#3a3a3a}
-.dark{background:var(--charcoal);color:var(--warm)}
-.dark .lead{color:#cfcdc8}
-.pad{padding:clamp(80px,12vw,150px) 0}
+.pad{padding:110px 0}
 
-/* Buttons */
-.btn{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;min-height:50px;transition:transform .2s,box-shadow .25s,background .2s,color .2s}
-.btn-primary{background:var(--white);color:#030103}
-.btn-primary:hover{box-shadow:0 0 34px 6px rgba(244,81,42,.55);transform:translateY(-2px)}
-.btn-orange{background:var(--orange);color:#fff}
-.btn-orange:hover{box-shadow:0 0 30px 4px rgba(244,81,42,.45);transform:translateY(-2px)}
-.btn-glass{background:rgba(244,81,42,.2);color:#fff;border-color:rgba(255,140,100,.28);backdrop-filter:blur(8px)}
-.btn-glass:hover{background:rgba(244,81,42,.38)}
-.btn-ghost{border-color:var(--charcoal);color:var(--charcoal)}
-.btn-ghost:hover{background:var(--charcoal);color:#fff}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 .95rem var(--body);padding:15px 26px;border-radius:999px;text-decoration:none;transition:transform .25s var(--ease),background .25s,border-color .25s,box-shadow .25s;white-space:nowrap}
+.btn-o{background:var(--o);color:#171717}
+.btn-o:hover{background:var(--o2);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(244,81,42,.6)}
+.btn-g{border:1.5px solid #3a3a3a;color:var(--fg)}
+.btn-g:hover{border-color:var(--fg);transform:translateY(-2px)}
+.btn[disabled]{opacity:.6;cursor:not-allowed;transform:none}
 
-/* Nav */
-.nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .3s,backdrop-filter .3s}
-.nav.solid{background:rgba(23,23,23,.82);backdrop-filter:blur(12px)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 var(--gutter);max-width:1500px;margin:0 auto;color:#fff}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:1.45rem;letter-spacing:.14em}
-.mark{width:32px;height:32px;border-radius:50%;background:#fff;display:grid;place-items:center}
-.mark svg{width:18px;height:18px}
-.links{display:flex;gap:clamp(18px,2.6vw,38px);list-style:none}
-.links a{font-family:var(--display);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;opacity:.85;padding:8px 2px;position:relative}
-.links a::after{content:"";position:absolute;left:0;bottom:2px;height:2px;width:0;background:var(--orange);transition:width .25s}
-.links a:hover,.links a.active{opacity:1}
-.links a:hover::after,.links a.active::after{width:100%}
-.nav-cta{padding:11px 22px;min-height:42px;font-size:.78rem;background:var(--orange);color:#fff}
-.burger{display:none;width:44px;height:44px;border-radius:50%;background:rgba(244,81,42,.22);border:1px solid rgba(255,140,100,.3);cursor:pointer;color:#fff;place-items:center}
-.burger span{display:block;width:18px;height:2px;background:#fff;position:relative;transition:.25s}
-.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:#fff;transition:.25s}
-.burger span::before{top:-6px}.burger span::after{top:6px}
-.burger[aria-expanded=true] span{background:transparent}
-.burger[aria-expanded=true] span::before{top:0;transform:rotate(45deg)}
-.burger[aria-expanded=true] span::after{top:0;transform:rotate(-45deg)}
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(11,11,11,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo img{height:26px;width:auto}
+.links{display:flex;gap:6px;list-style:none}
+.links a{display:block;text-decoration:none;color:var(--mut);font-weight:600;font-size:.92rem;padding:9px 16px;border-radius:10px;transition:color .2s,background .2s}
+.links a:hover,.links a.active{color:var(--fg);background:var(--s2)}
+.nav-cta{padding:11px 22px;font-size:.9rem}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger i{display:block;width:20px;height:2px;background:var(--fg);border-radius:2px;transition:transform .3s,opacity .3s}
+.burger[aria-expanded=true] i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] i:nth-child(2){opacity:0}
+.burger[aria-expanded=true] i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .menu{display:none}
 
-/* Hero */
-.hero{height:100svh;min-height:540px;background:#000;color:#fff;overflow:hidden;display:grid;place-items:center;text-align:center}
-.floor{position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(to top,rgb(244,81,42) 0%,rgba(120,30,12,.7) 38%,#000 100%);opacity:.55}
-.glow{position:absolute;left:50%;bottom:0;width:calc(906*var(--p));height:calc(515*var(--p));transform:translateX(-50%);min-width:100%}
-.glow img,.glow video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:bottom}
-.glow video{opacity:0;transition:opacity .8s}
-.glow video.on{opacity:1}
-.hero-c{position:relative;z-index:2;padding:calc(30*var(--p)) var(--gutter) calc(110*var(--p));width:100%}
-.badge{display:inline-flex;align-items:center;gap:calc(7*var(--p));background:rgba(244,81,42,.18);border:1px solid rgba(255,140,100,.25);border-radius:999px;padding:calc(4*var(--p)) calc(10*var(--p)) calc(4*var(--p)) calc(4*var(--p));font-family:var(--display);font-size:max(.72rem,calc(9.5*var(--p)));letter-spacing:.14em;text-transform:uppercase;backdrop-filter:blur(8px)}
-.badge b{font-weight:400;background:#fff;color:#030103;border-radius:999px;padding:calc(2.5*var(--p)) calc(8*var(--p))}
-.hero h1{font-size:max(2.3rem,calc(38*var(--p)));line-height:1.24;margin:calc(16*var(--p)) 0 calc(14*var(--p))}
-.hero h1 .clip{display:block;overflow:hidden}
-.hero h1 em{font-style:normal;color:var(--orange)}
-.hero p.sub{font-size:max(.95rem,calc(10.7*var(--p)));max-width:58ch;margin:0 auto;color:#e5dedb}
-.hero .tag{font-family:var(--display);letter-spacing:.2em;font-size:max(.78rem,calc(9*var(--p)));color:rgba(255,255,255,.6);margin-top:calc(10*var(--p));text-transform:uppercase}
-.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:calc(22*var(--p))}
+/* hero */
+.hero{padding-top:116px;text-align:center;overflow:hidden}
+.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--s1);border-radius:999px;padding:8px 18px 8px 14px;font:600 .85rem var(--body);color:var(--mut)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--o);box-shadow:0 0 0 0 rgba(244,81,42,.7);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(244,81,42,0)}100%{box-shadow:0 0 0 0 rgba(244,81,42,0)}}
+.hero h1{font:400 clamp(2.2rem,5.4vw,4.6rem)/1.04 var(--disp);text-transform:uppercase;margin:24px auto 0;max-width:1000px;text-wrap:balance}
+.hero .sub{color:var(--mut);font-size:clamp(1rem,1.5vw,1.2rem);max-width:58ch;margin:24px auto 0}
+.hero .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.stores{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:.85rem}
+.store{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--s1);border-radius:14px;padding:9px 16px;font:600 .82rem var(--body);color:var(--mut);text-decoration:none;line-height:1.25;text-align:left}
+.store small{display:block;font-size:.68rem;font-weight:500;color:var(--dim);letter-spacing:.04em}
+a.store:hover{border-color:var(--o);color:var(--fg)}
 
-/* Problem */
-.rows{margin-top:56px;border-top:1px solid var(--charcoal)}
-.row{display:grid;grid-template-columns:minmax(90px,.7fr) 1.4fr 2fr;gap:24px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line);transition:padding .3s}
-.row:hover{padding-left:12px}
-.num{font-family:var(--display);font-size:clamp(2.6rem,6vw,5rem);color:var(--orange);line-height:1}
-.row h3{font-size:clamp(1.4rem,2.6vw,2.1rem)}
-.row p{color:#444;max-width:46ch}
+/* stage + phones */
+.stage{position:relative;height:660px;margin-top:34px}
+.stage .ringglow{position:absolute;left:50%;bottom:-420px;width:1100px;height:1100px;margin-left:-550px;border-radius:50%;border:26px solid var(--o);filter:blur(60px);opacity:.55;animation:breathe 6s ease-in-out infinite}
+.stage .ringline{position:absolute;left:50%;bottom:-420px;width:1100px;height:1100px;margin-left:-550px;border-radius:50%;border:2px solid rgba(244,81,42,.55);filter:blur(1px)}
+@keyframes breathe{50%{opacity:.75;transform:scale(1.03)}}
+.stage::after{content:"";position:absolute;inset:auto 0 0;height:150px;background:linear-gradient(transparent,var(--bg) 85%);z-index:6;pointer-events:none}
+.pw{position:absolute;top:0;z-index:3;transform:translate3d(calc(var(--mx,0)*var(--k,10)*1px),calc(var(--my,0)*var(--k,10)*1px),0);transition:transform .25s ease-out}
+.pw.c{left:50%;margin-left:-150px;z-index:5;--k:14}
+.pw.l{left:50%;margin-left:-480px;top:90px;--k:24}
+.pw.r{left:50%;margin-left:220px;top:90px;--k:24}
+.fl{animation:float 7s ease-in-out infinite}
+.pw.l .fl{animation-delay:-2s;animation-duration:8s}
+.pw.r .fl{animation-delay:-4s;animation-duration:9s}
+@keyframes float{50%{transform:translateY(-14px)}}
+.phone{--w:300px;width:var(--w);aspect-ratio:300/620;font-size:calc(var(--w)/25);border-radius:calc(var(--w)*.155);padding:calc(var(--w)*.028);background:linear-gradient(145deg,#5b5b5b,#1a1a1a 38%,#2f2f2f 70%,#4a4a4a);box-shadow:0 40px 80px -20px rgba(0,0,0,.8),0 0 0 1px #000,inset 0 0 0 1px rgba(255,255,255,.08);position:relative;text-align:left}
+.pw.l .phone{--w:260px;transform:rotate(-7deg)}
+.pw.r .phone{--w:260px;transform:rotate(7deg)}
+.phone::before{content:"";position:absolute;right:-2px;top:22%;width:3px;height:12%;background:#3b3b3b;border-radius:0 3px 3px 0}
+.screen{position:relative;width:100%;height:100%;border-radius:calc(var(--w)*.128);background:#0d0d0d;overflow:hidden;color:var(--fg)}
+.notch{position:absolute;top:.75em;left:50%;transform:translateX(-50%);width:27%;height:1.9em;background:#000;border-radius:1em;z-index:6}
+.sb{position:absolute;inset:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:.95em 1.9em 0;font:700 .82em var(--body);z-index:5;height:3em}
+.sb span:last-child{display:flex;gap:.35em;align-items:center}
+.sb b{display:block;width:1.1em;height:.6em;border-radius:.15em;background:var(--fg);opacity:.9}
+.sb b+b{width:.7em;opacity:.6}
+.pg{position:absolute;inset:0;padding:3.6em 1.25em 5em;opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s;display:flex;flex-direction:column;gap:.9em}
+.pg.on{opacity:1;visibility:visible}
+/* ---- app UI (screens inside the phone mockups) ---- */
+.pg{padding:3.3em 1.1em 5.5em;gap:.75em}
+.hd{display:flex;align-items:center;justify-content:space-between;min-height:2.6em;flex:none}
+.hd .lg{display:flex;align-items:center;gap:.55em;font:400 1.1em var(--disp);letter-spacing:.08em}
+.hd .lg img{width:2em;height:2em;border-radius:.55em}
+.hd .tt{font:400 1.05em var(--disp);text-transform:uppercase;letter-spacing:.06em}
+.ava{width:2.6em;height:2.6em;border-radius:50%;overflow:hidden;border:.14em solid #3a3a3a;flex:none;background:#222;display:block}
+.ava img,.mini img{width:100%;height:100%;object-fit:cover;display:block}
+.rb{width:2.6em;height:2.6em;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);flex:none}
+.rb svg{width:1.15em;height:1.15em}
+.hh{font:400 1.8em/1.08 var(--disp);text-transform:uppercase;flex:none}.hh span{color:var(--o)}
+.sch{display:flex;align-items:center;gap:.7em;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:1.2em;padding:.7em .8em .7em 1em;color:#9b9993;font-size:.9em;flex:none}
+.sch svg{width:1.15em;height:1.15em;flex:none}.sch span{flex:1;white-space:nowrap;overflow:hidden}
+.sch .fl2{width:2.1em;height:2.1em;border-radius:50%;background:var(--o);display:grid;place-items:center;color:#171717;flex:none}.sch .fl2 svg{width:1.1em;height:1.1em}
+.caret{width:.12em;height:1.1em;background:var(--o);animation:blink 1s steps(1) infinite;margin-left:-.5em}
+@keyframes blink{50%{opacity:0}}
+.chips{display:flex;gap:.5em;overflow:hidden;flex:none}
+.chips b{font:700 .78em var(--body);padding:.6em 1.1em;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:#cfcdc8;white-space:nowrap}
+.chips b.a{background:var(--o);border-color:var(--o);color:#171717}
+.ph{position:relative;border-radius:1.5em;overflow:hidden;background:#1a1a1a;flex:none;border:1px solid rgba(255,255,255,.08)}
+.ph::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 80% at 75% 15%,rgba(244,81,42,.6),transparent 62%),linear-gradient(165deg,#303030,#121212)}
+.ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;z-index:1}
+.ph::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(transparent 38%,rgba(8,8,8,.88))}
+.ph .cap{position:absolute;left:1em;right:1em;bottom:.9em;z-index:3;display:flex;align-items:flex-end;justify-content:space-between;gap:.6em}
+.ph .cap h4{font:400 1.45em/1.05 var(--disp);text-transform:uppercase;display:flex;align-items:center;gap:.35em}
+.ph .cap p{font-size:.78em;color:#d4d2cc;margin-top:.35em}
+.ph .go{width:2.4em;height:2.4em;border-radius:50%;background:var(--o);display:grid;place-items:center;color:#171717;flex:none}.ph .go svg{width:1.1em;height:1.1em}
+.ptag{position:absolute;top:.8em;left:.8em;z-index:3;font:800 .6em var(--body);letter-spacing:.14em;text-transform:uppercase;padding:.55em 1em;border-radius:999px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(.5em)}
+.dtb{position:absolute;top:.8em;left:.8em;z-index:3;text-align:center;padding:.45em .8em;border-radius:.9em;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(.5em)}
+.dtb b{display:block;font:400 1.35em/1 var(--disp);color:var(--o)}.dtb span{font:700 .55em var(--body);letter-spacing:.14em}
+.mini{width:1.8em;height:1.8em;border-radius:50%;overflow:hidden;border:.13em solid #121212;display:block;background:#333}
+.minis{display:flex}.minis .mini+.mini{margin-left:-.55em}
+.tick{width:1em;height:1em;flex:none}
+.evr{display:flex;align-items:center;justify-content:space-between;gap:.6em;padding:0 .2em;flex:none}
+.evr div{font-size:.78em;color:#bdbbb5;display:flex;align-items:center;gap:.4em;min-width:0}.evr svg{width:1.2em;height:1.2em;color:var(--o);flex:none}
+.evr b{font:800 .72em var(--body);background:var(--o);color:#171717;padding:.6em 1.2em;border-radius:999px;flex:none}
+.seg{display:flex;gap:.5em;flex:none}
+.seg b{font:700 .8em var(--body);padding:.65em 1.4em;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:#cfcdc8}
+.seg b.a{background:var(--o);border-color:var(--o);color:#171717}
+.eq{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:1.3em;padding:.85em;display:flex;flex-direction:column;gap:.7em;flex:none}
+.eq .hd2{display:flex;gap:.8em;align-items:center}.eq .tx{flex:1;min-width:0}
+.eq .nm{font:700 .98em var(--body)}.eq .sm{font-size:.76em;color:#a9a7a1}
+.av{width:3em;height:3em;border-radius:.9em;flex:none;display:block;overflow:hidden;background:#222}
+.av svg,.av img{width:100%;height:100%;display:block;object-fit:cover}
+.pill{font:800 .58em var(--body);letter-spacing:.1em;text-transform:uppercase;padding:.45em .85em;border-radius:999px;background:rgba(244,81,42,.18);color:var(--o)}
+.pill.ok{background:rgba(250,249,246,.12);color:var(--fg)}
+.eq p{font-size:.82em;color:#d4d2cc;line-height:1.45}
+.acts{display:flex;gap:.6em}.acts b{flex:1;text-align:center;font:800 .8em var(--body);padding:.7em 0;border-radius:999px;border:1px solid rgba(255,255,255,.18)}
+.acts b.p{background:var(--o);border-color:var(--o);color:#171717}
+.lock{display:flex;gap:.6em;align-items:center;font-size:.72em;color:#a9a7a1;padding:0 .3em;flex:none}.lock svg{width:1.3em;height:1.3em;flex:none;color:var(--o)}
+.pills2{display:grid;grid-template-columns:1fr 1fr;gap:.55em;flex:none}
+.pills2 div{display:flex;align-items:center;gap:.6em;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:.55em .8em}
+.pills2 i{width:2.1em;height:2.1em;border-radius:50%;background:rgba(244,81,42,.18);display:grid;place-items:center;color:var(--o);flex:none}.pills2 i svg{width:1.1em;height:1.1em}
+.pills2 small{display:block;font-size:.58em;color:#8f8d87;letter-spacing:.06em;text-transform:uppercase}.pills2 b{font:700 .78em var(--body)}
+.abt{flex:none}.abt h5{font:700 .8em var(--body);margin-bottom:.35em}.abt p{font-size:.72em;color:#8f8d87;line-height:1.5}
+.cta2{display:flex;align-items:center;gap:.8em;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:.4em;flex:none}
+.cta2 i{width:2.7em;height:2.7em;border-radius:50%;background:var(--o);display:grid;place-items:center;color:#171717;flex:none}.cta2 i svg{width:1.2em;height:1.2em}
+.cta2 span{flex:1;text-align:center;font:800 .92em var(--body);margin-right:2.7em}
+.tabs{position:absolute;left:.9em;right:.9em;bottom:.9em;display:flex;justify-content:space-between;align-items:center;background:rgba(22,22,22,.92);border:1px solid rgba(255,255,255,.1);border-radius:2em;padding:.45em;backdrop-filter:blur(.8em)}
+.tabs i{width:3em;height:3em;border-radius:50%;display:grid;place-items:center;color:#7c7a75}.tabs i svg{width:1.45em;height:1.45em}
+.tabs i.on{background:var(--o);color:#171717}
+.pg.on>*{animation:up .7s var(--ease) both}
+.pg.on>:nth-child(3){animation-delay:.1s}.pg.on>:nth-child(4){animation-delay:.2s}.pg.on>:nth-child(5){animation-delay:.3s}.pg.on>:nth-child(6){animation-delay:.4s}.pg.on>:nth-child(7){animation-delay:.5s}
+@keyframes up{from{opacity:0;transform:translateY(1.4em)}}
+.prog{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);display:flex;gap:8px;z-index:7}
+.prog i{width:26px;height:4px;border-radius:4px;background:#333;overflow:hidden;position:relative}
+.prog i.a::after{content:"";position:absolute;inset:0;background:var(--o);transform-origin:left;animation:fill var(--dur,3.8s) linear forwards}
+@keyframes fill{from{transform:scaleX(0)}}
+.note{color:var(--dim);font-size:.78rem;margin-top:-8px;position:relative;z-index:7}
 
-/* Mission */
-.mission{background:var(--charcoal);color:#fff;overflow:hidden}
-.mission::before{content:"";position:absolute;right:-10%;top:-30%;width:60vw;height:60vw;background:radial-gradient(circle,rgba(244,81,42,.22),transparent 62%);pointer-events:none}
-.mission .cols{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(30px,6vw,90px);align-items:end;position:relative}
-.stack{font-family:var(--display);font-size:clamp(1.6rem,3.6vw,3rem);line-height:1.12;text-transform:uppercase}
-.stack span{display:block}.stack span:nth-child(2){color:var(--orange)}.stack span:nth-child(3){color:rgba(255,255,255,.55)}
+/* photo-led app UI */
+.pic{position:relative;overflow:hidden;border-radius:1.3em;background:#1a1a1a;flex:none}
+.pic>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pic>svg.under{position:absolute;inset:0;width:100%;height:100%}
+.pic .sh{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(0,0,0,.28),transparent 30%,rgba(0,0,0,.9) 100%)}
+.pic .ov{position:absolute;inset:0;z-index:3;padding:1em;display:flex;flex-direction:column;justify-content:space-between}
+.pic .tp{display:flex;justify-content:space-between;align-items:flex-start}
+.dchip{background:rgba(11,11,11,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:.8em;padding:.4em .75em;font:700 .74em var(--body);letter-spacing:.1em;color:#fff}
+.dchip b{color:var(--o);font-family:var(--disp);font-weight:400;font-size:1.25em;margin-right:.3em}
+.live{background:var(--o);color:#171717;border-radius:999px;padding:.35em .8em;font:800 .66em var(--body);letter-spacing:.12em;text-transform:uppercase}
+.etitle{font:400 1.5em/1.05 var(--disp);text-transform:uppercase;color:#fff}
+.esub{font-size:.8em;color:#d6d4cf;margin-top:.25em}
+.erow{display:flex;align-items:center;justify-content:space-between;margin-top:.8em;gap:.6em}
+.stk{display:flex;align-items:center;font-size:.76em;color:#e8e6e1;font-weight:700;flex:1;min-width:0;white-space:nowrap;overflow:hidden}
+.stk .av{width:2em;height:2em;border:.18em solid #0d0d0d;margin-left:-.6em}.stk .av:first-child{margin-left:0}
+.stk span.t{margin-left:.7em}
+.gob{flex:none;background:var(--o);color:#171717;font:800 .8em var(--body);padding:.7em 1.2em;border-radius:999px;white-space:nowrap}
+.tbar{display:flex;align-items:center;justify-content:space-between;flex:none}
+.rb{width:2.9em;height:2.9em;border-radius:50%;background:#1b1b1b;border:1px solid #2c2c2c;display:grid;place-items:center}
+.rb svg{width:1.3em;height:1.3em}
+.tbar .tt{font:700 1em var(--body)}
+.hd{display:flex;align-items:center;justify-content:space-between;flex:none}
+.hd .mk{height:1.5em;width:auto}
+.hd .av{width:2.7em;height:2.7em;border:.15em solid #2a2a2a}
+.hi{font-size:.95em;color:var(--mut);margin-bottom:-.5em;flex:none}
+.hdl{font:400 2.05em/1.04 var(--disp);text-transform:uppercase;flex:none}
+.pills{display:grid;grid-template-columns:1fr 1fr;gap:.6em;flex:none}
+.pills div{display:flex;align-items:center;gap:.7em;background:#171717;border:1px solid #262626;border-radius:1em;padding:.7em .9em}
+.pills svg{width:1.5em;height:1.5em;color:var(--o);flex:none}
+.pills small{display:block;font-size:.66em;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.pills b{font:700 .95em var(--body)}
+.gym{display:flex;align-items:center;gap:.8em;flex:none}
+.gym .av{width:2.8em;height:2.8em}.gym .tx{flex:1;min-width:0}.gym .nm{font:700 .95em var(--body)}.gym .sm{font-size:.74em;color:var(--mut)}
+.abt h4{font:700 .72em var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:.4em}
+.abt p{font-size:.84em;color:#cfcdc8;line-height:1.5}
+.cta2{position:absolute;left:1em;right:1em;bottom:1em;display:flex;align-items:center;justify-content:space-between;background:#161616;border:1px solid #262626;border-radius:1.4em;padding:.55em .55em .55em 1.3em;font:700 .95em var(--body)}
+.cta2 i{width:2.6em;height:2.6em;border-radius:50%;background:var(--o);display:grid;place-items:center;font-style:normal;color:#171717;font-weight:800}
+.tabs{position:absolute;left:1em;right:1em;bottom:1em;display:flex;justify-content:space-between;align-items:center;background:#161616;border:1px solid #262626;border-radius:2em;padding:.5em .6em}
+.tabs div{width:3em;height:3em;border-radius:50%;display:grid;place-items:center;color:#77746f}
+.tabs div.on{background:var(--o);color:#171717;box-shadow:0 .4em 1.2em -.2em rgba(244,81,42,.6)}
+.tabs svg{width:1.45em;height:1.45em}
+.lockrow{display:flex;align-items:center;justify-content:space-between;background:#161616;border:1px solid #262626;border-radius:1.2em;padding:.75em .9em;flex:none}
+.lockrow .tx b{display:block;font:700 .9em var(--body)}.lockrow .tx small{font-size:.72em;color:var(--mut)}
+.sw{width:3.2em;height:1.8em;border-radius:999px;background:#2f2f2f;position:relative}.sw::after{content:"";position:absolute;left:.25em;top:.25em;width:1.3em;height:1.3em;border-radius:50%;background:#8a8883}
+.pg.on>*:not(.tabs):not(.cta2){animation:up .7s var(--ease) both}
 
-/* Platform */
-.plat{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-left:1px solid var(--line)}
-.plat>div{padding:8px 26px 40px;border-right:1px solid var(--line);border-top:3px solid var(--charcoal);transition:border-color .3s,background .3s;background:transparent}
-.plat>div:hover{border-top-color:var(--orange);background:#fff}
-.plat .num{font-size:2.4rem;display:block;margin:22px 0 40px}
-.plat h3{font-size:1.4rem;margin-bottom:14px}
-.plat p{color:#555;font-size:.97rem}
-.note{margin-top:30px;color:var(--grey);font-size:.9rem}
+/* marquee strip */
+.strip{border-block:1px solid var(--line);background:var(--s1);padding:20px 0;overflow:hidden}
+.strip .wrap{display:flex;align-items:center;justify-content:center;gap:12px 34px;flex-wrap:wrap;font:700 .8rem var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.strip span.d{color:var(--o)}
 
-/* Split sections */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
-.ph{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#2a2a2a,#111);overflow:hidden;display:grid;place-items:center;text-align:center;padding:30px;color:#9a9a9a;font-size:.85rem}
-.ph .fb{position:absolute;inset:0;width:100%;height:100%}
-.ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(244,81,42,.35),transparent 45%)}
-.phtag{position:absolute;left:14px;bottom:14px;z-index:1;font-family:var(--display);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);padding:5px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
-.ph span{position:relative;z-index:1;border:1px dashed #666;padding:12px 16px;max-width:260px}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ticks{list-style:none;margin:30px 0 38px}
-.ticks li{padding:14px 0 14px 34px;border-bottom:1px solid var(--line);position:relative}
-.dark .ticks li{border-color:#333}
-.ticks li::before{content:"";position:absolute;left:0;top:23px;width:18px;height:2px;background:var(--orange)}
+/* how */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px;counter-reset:s}
+.step{background:var(--s1);border:1px solid var(--line);border-radius:22px;padding:28px;position:relative;transition:border-color .3s,transform .3s var(--ease)}
+.step:hover{border-color:#3d3d3d;transform:translateY(-4px)}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:400 2.4rem/1 var(--disp);color:var(--o);display:block;margin-bottom:34px}
+.step h3{font:400 1.25rem var(--disp);text-transform:uppercase;margin-bottom:10px}
+.step p{color:var(--mut);font-size:.95rem}
 
-/* Ecosystem */
-.eco{margin-top:56px;display:flex;flex-wrap:wrap;gap:0;border-top:1px solid #333}
-.eco div{flex:1 1 200px;padding:34px 24px 34px 0;border-bottom:1px solid #333;font-family:var(--display);font-size:clamp(1.3rem,2.4vw,2rem);text-transform:uppercase;transition:color .25s}
-.eco div small{display:block;font-family:var(--body);text-transform:none;font-size:.78rem;color:var(--orange);letter-spacing:.1em;margin-bottom:8px}
-.eco div:hover{color:var(--orange)}
+/* showcase */
+.show{background:var(--s1);border-block:1px solid var(--line);overflow:hidden}
+.show .grid{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;margin-top:50px}
+.fl-list{display:flex;flex-direction:column;gap:12px}
+.ft{text-align:left;border:1px solid var(--line);background:var(--bg);border-radius:20px;padding:22px 24px;transition:border-color .3s,background .3s;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:start}
+.ft .ic{grid-row:span 2;width:46px;height:46px;border-radius:14px;background:var(--s2);display:grid;place-items:center;color:var(--mut);transition:background .3s,color .3s}
+.ft .ic svg{width:24px;height:24px}
+.ft h3{font:400 1.2rem var(--disp);text-transform:uppercase;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.ft h3 em{font:700 .62rem var(--body);letter-spacing:.14em;color:var(--o);font-style:normal;border:1px solid rgba(244,81,42,.45);padding:3px 9px;border-radius:999px}
+.ft p{color:var(--mut);font-size:.94rem;grid-column:2;display:none}
+.ft[aria-selected=true]{border-color:var(--o);background:linear-gradient(135deg,rgba(244,81,42,.1),var(--bg) 60%)}
+.ft[aria-selected=true] .ic{background:var(--o);color:#171717}
+.ft[aria-selected=true] p{display:block}
+.ft:hover{border-color:#444}
+.showphone{position:relative;padding:20px 40px 30px}
+.showphone .ringglow2{position:absolute;inset:6% 0;border-radius:50%;background:radial-gradient(closest-side,rgba(244,81,42,.35),transparent);filter:blur(30px)}
+.showphone .phone{--w:320px;position:relative}
 
-/* Prelaunch */
-.pre{background:var(--orange);color:#fff;text-align:center}
-.pre .h2{margin-left:auto;margin-right:auto;max-width:15ch}
-.pre .lead{margin:0 auto 34px;color:#fff3ee}
-.pre .btn-primary:hover{box-shadow:0 0 0 6px rgba(255,255,255,.3)}
+/* audience */
+.aud-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:44px}
+.aud-tabs button{padding:12px 22px;border-radius:999px;border:1px solid var(--line);font-weight:700;font-size:.92rem;color:var(--mut);transition:all .25s}
+.aud-tabs button:hover{color:var(--fg);border-color:#444}
+.aud-tabs button[aria-selected=true]{background:var(--fg);color:#171717;border-color:var(--fg)}
+.aud-panel{margin-top:26px;display:grid;grid-template-columns:1.1fr 1fr;gap:30px;background:var(--s1);border:1px solid var(--line);border-radius:28px;padding:clamp(26px,4vw,52px);min-height:330px;overflow:hidden;position:relative}
+.aud-panel::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;border:12px solid rgba(244,81,42,.5);filter:blur(30px);pointer-events:none}
+.aud-panel h3{font:400 clamp(1.6rem,3vw,2.4rem)/1.08 var(--disp);text-transform:uppercase}
+.aud-panel ul{list-style:none;display:flex;flex-direction:column;gap:16px;position:relative;z-index:1}
+.aud-panel li{display:flex;gap:14px;color:#d8d6d1;align-items:flex-start}
+.aud-panel li svg{width:22px;height:22px;flex:none;color:var(--o);margin-top:2px}
+.aud-panel .btn{margin-top:28px;position:relative;z-index:1}
+.aud-panel[hidden]{display:none}
 
-/* Form */
-.form-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(30px,6vw,90px)}
-form{background:#fff;padding:clamp(24px,4vw,44px);border:1px solid var(--line)}
-.f{margin-bottom:20px}
-label,.lbl{display:block;font-family:var(--display);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
-label i{color:var(--orange);font-style:normal}
-input[type=text],input[type=email],select,textarea{width:100%;font:inherit;padding:14px 14px;border:1.5px solid #cfcdc8;background:var(--warm);border-radius:4px;color:var(--charcoal)}
-textarea{min-height:100px;resize:vertical}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(244,81,42,.2)}
-[aria-invalid=true]{border-color:#b3261e!important}
-.err{color:#b3261e;font-size:.82rem;min-height:1.1em;margin-top:4px}
+/* principles */
+.pr{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.pr div{padding:28px 0 0;border-top:2px solid var(--line);transition:border-color .3s}
+.pr div:hover{border-color:var(--o)}
+.pr h3{font:400 1.15rem var(--disp);text-transform:uppercase;margin-bottom:10px}
+.pr p{color:var(--mut);font-size:.95rem}
+
+/* form */
+.form-sec{background:var(--s1);border-block:1px solid var(--line)}
+.form-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}
+form{background:var(--bg);border:1px solid var(--line);border-radius:26px;padding:clamp(22px,3.4vw,40px)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.consent{display:flex;gap:12px;align-items:flex-start;font-size:.85rem;color:#444;margin-bottom:22px}
-.consent input{width:20px;height:20px;margin-top:3px;accent-color:var(--orange);flex:none}
-.status{margin-top:18px;padding:14px 16px;border-left:4px solid;font-size:.92rem;display:none}
-.status.show{display:block}
-.status.ok{border-color:#1b7f3b;background:#eef7f1}
-.status.bad{border-color:#b3261e;background:#fbeeed}
-.status.load{border-color:var(--grey);background:var(--warm)}
+.f{margin-bottom:18px;min-width:0}
+label{display:block;font:700 .74rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
+label i{color:var(--o);font-style:normal}
+input[type=text],input[type=email],select,textarea{width:100%;background:var(--s1);border:1.5px solid var(--line);border-radius:14px;color:var(--fg);font:500 1rem var(--body);padding:14px 16px;transition:border-color .2s,background .2s;appearance:none;-webkit-appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' fill='none' stroke='%23A3A19B' stroke-width='2'%3E%3Cpath d='m1 1 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+select option{background:#1b1b1b}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--o);background:var(--s2)}
+[aria-invalid=true]{border-color:#ff6b6b!important}
+.err{color:#ff8c8c;font-size:.82rem;min-height:0;margin-top:6px}
+.err:empty{display:none}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:.86rem;color:var(--mut);margin-bottom:22px}
+.consent input{width:20px;height:20px;margin-top:3px;accent-color:var(--o);flex:none}
+.consent label{text-transform:none;letter-spacing:0;font:500 .86rem var(--body);margin:0;color:var(--mut)}
+.consent a{color:var(--fg)}
 form .btn{width:100%}
-form .btn[disabled]{opacity:.6;cursor:not-allowed}
-.hp{position:absolute;left:-9999px}
+.status{display:none;margin-top:16px;padding:14px 16px;border-radius:14px;font-size:.92rem;border:1px solid}
+.status.show{display:block}
+.status.ok{border-color:#2f7d4f;background:rgba(47,125,79,.14);color:#9be3b8}
+.status.bad{border-color:#8a3a3a;background:rgba(138,58,58,.16);color:#ffb3b3}
+.status.load{border-color:var(--line);color:var(--mut)}
 
-/* Final */
-.final{background:#000;color:#fff;text-align:center;overflow:hidden}
-.final::after{content:"";position:absolute;left:50%;bottom:-40%;width:90vw;height:70vw;max-width:1100px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(244,81,42,.55),transparent 65%);pointer-events:none}
-.final .h2{max-width:14ch;margin-left:auto;margin-right:auto}
-.final .lead{margin:0 auto 36px}
-.final .wrap{position:relative;z-index:1}
+/* faq */
+.faq{max-width:820px;margin:50px auto 0}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 4px;font:700 1.08rem var(--body)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 1.8rem/1 var(--disp);color:var(--o);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--mut);padding:0 4px 26px;max-width:66ch}
+.faq details p a{color:var(--fg)}
 
-footer{background:var(--charcoal);color:#cfcdc8;padding:70px 0 30px}
-.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid #333}
-footer .logo{color:#fff;margin-bottom:16px}
-footer ul{list-style:none}
-footer li{margin:8px 0}
-footer a{text-decoration:none}
-footer a:hover{color:var(--orange)}
-footer h4{font-family:var(--display);font-weight:400;color:#fff;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;margin-bottom:14px}
-.copy{padding-top:24px;font-size:.82rem;color:#8a8a8a;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+/* closing + footer */
+.closing{text-align:center;overflow:hidden}
+.closing .ringglow{position:absolute;left:50%;top:60%;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;border:22px solid var(--o);filter:blur(60px);opacity:.35}
+.closing .wrap{position:relative}
+.closing h2{max-width:14ch;margin-inline:auto}
+footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)}
+.fgrid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.fgrid p{color:var(--mut);font-size:.92rem;max-width:34ch;margin-top:16px}
+.fcols{display:flex;gap:64px;flex-wrap:wrap}
+.fcols h4{font:700 .74rem var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.fcols ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fcols a{color:var(--mut);text-decoration:none;font-size:.95rem}
+.fcols a:hover{color:var(--fg)}
+.legal{margin-top:44px;padding-top:24px;border-top:1px solid var(--line);color:var(--dim);font-size:.8rem;display:flex;justify-content:space-between;gap:12px 30px;flex-wrap:wrap}
 
-/* Contrast fixes: light text on every dark background */
-.dark .lead,.mission .lead,.final .lead{color:#e4e2dd}
-.dark p,.mission p,.final p{color:#e4e2dd}
-.dark .note,.mission .note{color:#b9b6af}
-.dark h2,.dark h3,.mission h2,.final h2{color:#fff}
-.dark .ticks li{color:#f1efea}
-.eco div small{color:#ff7a57}
-.mission .stack span:nth-child(3){color:rgba(255,255,255,.75)}
-.final .eyebrow,.dark .eyebrow,.mission .eyebrow{color:#ff7a57}
-/* Orange section: dark text for contrast (charcoal on orange passes AA) */
-.pre,.pre p,.pre .lead{color:#171717}
-.pre .h2{color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.12)}
-.pre .eyebrow{color:#171717!important}
-footer p,footer li,footer a{color:#cfcdc8}
-footer .copy,footer .copy span{color:#a3a09a}
-footer h4{color:#fff}
-.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
-.rv.in{opacity:1;transform:none}
+/* reveals */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
 
-@media (max-width:900px){
-  .links,.nav-cta{display:none}
-  .burger{display:grid}
-  .menu{display:none;position:absolute;top:68px;left:var(--gutter);right:var(--gutter);background:rgba(30,12,6,.94);border:1px solid rgba(255,140,100,.25);backdrop-filter:blur(14px);border-radius:18px;padding:12px;list-style:none}
-  .menu.open{display:block}
-  .menu a{display:block;padding:14px 16px;font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;text-decoration:none;color:#fff;border-radius:10px}
-  .menu a:hover{background:rgba(244,81,42,.2)}
-  .menu .cta{background:var(--orange);text-align:center;margin-top:8px}
-  .hero{--p:min(calc(100vw/520),calc(100svh/760))}
-  .hero h1{font-size:clamp(2.1rem,9vw,3.6rem)}
-  .hero p.sub{font-size:clamp(.95rem,3.6vw,1.1rem)}
-  .hero-c{padding-bottom:20svh;padding-top:90px}
-  .glow{width:230vw;height:130vw;min-width:0}
-  .row{grid-template-columns:70px 1fr;gap:6px 18px}
-  .row p{grid-column:2}
-  .mission .cols,.split,.form-wrap,.foot{grid-template-columns:1fr}
-  .plat{grid-template-columns:1fr 1fr}
-  .ph{aspect-ratio:4/3}
+/* responsive */
+@media (max-width:1100px){
+  .pw.l{margin-left:-440px}.pw.r{margin-left:190px}
+  .steps{grid-template-columns:repeat(2,1fr)}.pr{grid-template-columns:repeat(2,1fr)}
 }
-@media (max-width:540px){
-  .plat{grid-template-columns:1fr}
-  .two{grid-template-columns:1fr}
-  .btns .btn{width:100%}
+@media (max-width:960px){
+  .links,.nav-cta{display:none}.burger{display:flex}
+  .menu{display:block;position:fixed;inset:76px 0 0;background:rgba(11,11,11,.97);backdrop-filter:blur(14px);padding:20px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:all .3s;z-index:49}
+  .menu.open{opacity:1;visibility:visible;transform:none}
+  .menu a{display:block;padding:18px 6px;font:400 1.5rem var(--disp);text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--line)}
+  .menu .btn{margin-top:24px;width:100%;font:700 1rem var(--body);text-transform:none;border:0;padding:16px}
+  .pw.l,.pw.r{display:none}
+  .stage{height:660px}
+  .show .grid{grid-template-columns:1fr;gap:30px}
+  .showphone{justify-self:center;order:-1}
+  .form-wrap{grid-template-columns:1fr;gap:36px}
+  .aud-panel{grid-template-columns:1fr}
+  .pad{padding:84px 0}
+}
+@media (max-width:560px){
+  .steps,.pr{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr;gap:0}
+  .hero{padding-top:124px}
+  .pw.c .phone{--w:270px}.pw.c{margin-left:-135px}
+  .stage{height:600px}
+  .showphone{padding:10px 0 30px}.showphone .phone{--w:280px}
+  .btn{padding:14px 22px}
 }
 @media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
-  *{transition:none!important;animation:none!important}
-  .rv{opacity:1;transform:none}
+  .js .rv{opacity:1;transform:none}
 }
 </style>
 </head>
@@ -235,179 +366,128 @@ footer h4{color:#fff}
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav" id="nav">
-  <div class="nav-in">
-    <a href="#home" class="logo" aria-label="VYRGON home">
-      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h5l4 10 4-10h5l-7 15h-4z" fill="#171717"/></svg></span>VYRGON
-    </a>
-    <nav aria-label="Primary">
-      <ul class="links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#mission">Our Mission</a></li>
-        <li><a href="#fighters">For Fighters</a></li>
-        <li><a href="#platform">The Platform</a></li>
-        <li><a href="#brands">For Brands</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-    <a href="#interest" class="btn nav-cta">Join the Movement</a>
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span></button>
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="VYRGON home"><img src="assets/logo.svg" alt="VYRGON" width="180" height="26"></a>
+    <nav aria-label="Main"><ul class="links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#app">The app</a></li>
+      <li><a href="#for">Who it&rsquo;s for</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul></nav>
+    <a class="btn btn-o nav-cta" href="#interest">Join early list</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
   </div>
-  <ul class="menu" id="menu">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#mission">Our Mission</a></li>
-    <li><a href="#fighters">For Fighters</a></li>
-    <li><a href="#platform">The Platform</a></li>
-    <li><a href="#brands">For Brands</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#interest" class="cta">Join the Movement</a></li>
-  </ul>
 </header>
+<div class="menu" id="menu">
+  <a href="#how">How it works</a><a href="#app">The app</a><a href="#for">Who it&rsquo;s for</a><a href="#faq">FAQ</a>
+  <a class="btn btn-o" href="#interest">Join early list</a>
+</div>
 
 <main id="main">
-
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="floor"></div>
-  <!-- Glow plate + loop supplied with the design reference. Replace with VYRGON-licensed assets when available. -->
-  <div class="glow" aria-hidden="true">
-    <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/7e2a7695-c32b-4179-9c90-cae865819272.jpg" alt="" fetchpriority="high">
-    <video id="glowVid" muted loop playsinline preload="auto" data-src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/6ad9485f-ab40-444b-bd3c-40dcb9bd0e2f.mp4"></video>
-  </div>
-  <div class="hero-c">
-    <div class="badge" id="hBadge"><b>Coming Soon</b><span>India-first MMA platform</span></div>
-    <h1 id="hH"><span class="clip"><span class="ln">Your fight.</span></span><span class="clip"><span class="ln"><em>Your future.</em></span></span></h1>
-    <p class="sub" id="hSub">Talent deserves to be seen. VYRGON is building a platform to help MMA athletes get discovered, connect with opportunities, and take their careers further.</p>
-    <p class="tag" id="hTag">Built for the fight.</p>
-    <div class="btns" id="hBtns">
-      <a class="btn btn-primary" href="#interest">Be part of VYRGON</a>
-      <a class="btn btn-glass" href="#mission">Discover our mission</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section class="pad" id="problem">
   <div class="wrap">
-    <p class="eyebrow rv">The problem</p>
-    <h2 class="h2 rv" style="max-width:16ch">The fight doesn't end in the cage.</h2>
-    <p class="lead rv">Building an MMA career takes more than performance. Fighters also need visibility, connections, and opportunities to show the world what they can do.</p>
-    <div class="rows">
-      <div class="row rv"><span class="num">01</span><h3>Visibility</h3><p>Talented athletes can struggle to get discovered beyond their immediate circles.</p></div>
-      <div class="row rv"><span class="num">02</span><h3>Connections</h3><p>Finding relevant brands, events, and people within the MMA ecosystem can take time and effort.</p></div>
-      <div class="row rv"><span class="num">03</span><h3>Opportunity</h3><p>Athletes need ways to showcase their journey and connect with people who can help them move forward.</p></div>
+    <div class="badge rv"><i></i>Pre-launch &middot; App in development</div>
+    <h1 class="rv">Powering fighters.<br> Building <span class="o">champions.</span></h1>
+    <p class="sub rv">VYRGON is an India-first MMA platform, built for the world. Get discovered, connect with brands, events and gyms, and take your fighting career further.</p>
+    <div class="btns rv">
+      <a class="btn btn-o" href="#interest">Join the early list</a>
+      <a class="btn btn-g" href="#app">See the app</a>
     </div>
   </div>
-</section>
 
-<!-- MISSION -->
-<section class="mission pad" id="mission">
-  <div class="wrap cols">
-    <div>
-      <p class="eyebrow rv">Our mission</p>
-      <h2 class="h2 rv">We're building a bigger future for MMA.</h2>
-      <p class="lead rv">VYRGON is being built to bring fighters, fans, brands, event organisers, and academies closer together. Our vision is to make MMA athletes more discoverable and help create more pathways for them to grow their careers.</p>
-    </div>
-    <p class="stack rv"><span>More visibility.</span><span>More connections.</span><span>More opportunities.</span></p>
+  <div class="stage" id="stage" aria-label="Preview of the VYRGON app screens">
+    <div class="ringglow"></div><div class="ringline"></div>
+    <div class="pw l"><div class="fl"><div class="phone" aria-hidden="true"><div class="screen"><div class="notch"></div><div class="sb"><span>9:41</span><span><b></b><b></b></span></div><div class="pg on" data-screen="profile"></div></div></div></div></div>
+    <div class="pw c"><div class="fl"><div class="phone" role="img" aria-label="VYRGON app screens cycling through Discover, Explore, Enquiries and Profile"><div class="screen" id="heroScreen"><div class="notch"></div><div class="sb"><span>9:41</span><span><b></b><b></b></span></div>
+      <div class="pg" data-screen="discover"></div><div class="pg" data-screen="explore"></div><div class="pg" data-screen="connect"></div><div class="pg" data-screen="profile"></div>
+    </div></div></div></div>
+    <div class="pw r"><div class="fl"><div class="phone" aria-hidden="true"><div class="screen"><div class="notch"></div><div class="sb"><span>9:41</span><span><b></b><b></b></span></div><div class="pg on" data-screen="explore"></div></div></div></div></div>
   </div>
+  <div class="wrap">    <div class="stores rv" style="margin-top:6px" id="stores">
+      <span>App availability</span>
+      <span class="store" data-store="appStore"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg><span><small>iPhone</small><b class="sl">App Store &middot; Coming soon</b></span></span>
+      <span class="store" data-store="googlePlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3l14 9-14 9z"/></svg><span><small>Android</small><b class="sl">Google Play &middot; Coming soon</b></span></span>
+    </div>
+</div>
+  <p class="note" style="text-align:center;padding:0 20px;margin-top:18px">App screens are design previews with sample content. Features are planned and may change.</p>
 </section>
 
-<!-- PLATFORM -->
-<section class="pad" id="platform">
+<!-- AUDIENCE STRIP -->
+<div class="strip" aria-label="Who VYRGON is for">
+  <div class="wrap"><span>Fighters</span><span class="d">/</span><span>Brands</span><span class="d">/</span><span>Event organisers</span><span class="d">/</span><span>Gyms &amp; coaches</span><span class="d">/</span><span>Fans</span></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="pad" id="how">
   <div class="wrap">
-    <p class="eyebrow rv">The platform</p>
-    <h2 class="h2 rv" style="max-width:15ch">Built around the people who fight.</h2>
-    <div class="plat">
-      <div class="rv"><span class="num">01</span><h3>Discover Fighters</h3><p>Explore MMA athletes, learn about their backgrounds, and find fighters to follow.</p></div>
-      <div class="rv"><span class="num">02</span><h3>Explore MMA</h3><p>Discover the wider combat sports ecosystem, including events, academies, coaches, and athletes.</p></div>
-      <div class="rv"><span class="num">03</span><h3>Connect With Brands</h3><p>Create a pathway for athletes and potential sponsors to discover one another and explore suitable opportunities.</p></div>
-      <div class="rv"><span class="num">04</span><h3>Build Your Presence</h3><p>Give athletes a dedicated place to showcase their profile, achievements, experience, and journey.</p></div>
-    </div>
-    <p class="note">These are planned platform capabilities. VYRGON is in development and not every feature is live.</p>
-  </div>
-</section>
-
-<!-- FIGHTERS -->
-<section class="dark pad" id="fighters">
-  <div class="wrap split">
-    <div class="ph rv"><!-- Free Unsplash photo (Unsplash License). Swap for VYRGON photography when available. -->
-      <svg class="fb" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="g1" cx="50%" cy="62%" r="55%"><stop offset="0" stop-color="#F4512A" stop-opacity=".95"/><stop offset=".5" stop-color="#7a210f" stop-opacity=".6"/><stop offset="1" stop-color="#0d0d0d" stop-opacity="0"/></radialGradient></defs><rect width="400" height="500" fill="#111"/><rect width="400" height="500" fill="url(#g1)"/><g fill="#080808" stroke="#080808" stroke-linecap="round" stroke-linejoin="round"><circle cx="200" cy="140" r="34" stroke="none"/><path d="M138 200q62-22 124 0l-14 168h-96z" stroke-width="6"/><path d="M150 215L104 292M104 292L160 192" stroke-width="28" fill="none"/><circle cx="166" cy="178" r="28" stroke="none"/><path d="M250 215L298 286M298 286L246 172" stroke-width="28" fill="none"/><circle cx="240" cy="160" r="28" stroke="none"/><path d="M176 360L136 480M224 360L272 480" stroke-width="40" fill="none"/></g></svg>
-      <img src="assets/fighter.jpg" alt="Fighter in boxing gloves, grayscale portrait" width="1000" height="1250" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1622599490476-f804e3092019?auto=format&fit=crop&w=1000&q=75'">
-      <span class="phtag">Photo: Zachary Kadolph / Unsplash</span></div>
-    <div>
-      <p class="eyebrow rv">For fighters</p>
-      <h2 class="h2 rv">Your career deserves to be seen.</h2>
-      <p class="lead rv">Every fighter has a story. VYRGON aims to give athletes a better way to showcase theirs, connect with the MMA community, and explore new opportunities.</p>
-      <ul class="ticks rv">
-        <li>A dedicated fighter profile.</li>
-        <li>A place to showcase background, discipline, and achievements.</li>
-        <li>Better discoverability within the MMA ecosystem.</li>
-        <li>Opportunities to explore relevant events and connections.</li>
-        <li>A pathway to potential sponsorship opportunities.</li>
-      </ul>
-      <a class="btn btn-orange rv" href="#interest" data-audience="Fighter / Athlete">Register your interest</a>
+    <p class="eyebrow rv">How it works</p>
+    <h2 class="h2 rv">From the gym to the <span class="o">spotlight.</span></h2>
+    <p class="lead rv">Talent is built in the gym. VYRGON is being built to help it be seen. Four simple steps.</p>
+    <div class="steps">
+      <div class="step rv"><h3>Build your profile</h3><p>Add your discipline, weight class, record, highlights and a short bio in your own voice.</p></div>
+      <div class="step rv"><h3>Get discovered</h3><p>Brands, organisers, gyms and fans search by country, weight class and discipline.</p></div>
+      <div class="step rv"><h3>Connect</h3><p>Receive enquiries inside the app. Your contact details stay hidden until you accept.</p></div>
+      <div class="step rv"><h3>Grow your career</h3><p>Show your journey, find events, and build the relationships that move your career forward.</p></div>
     </div>
   </div>
 </section>
 
-<!-- BRANDS -->
-<section class="pad" id="brands">
-  <div class="wrap split">
-    <div>
-      <p class="eyebrow rv">For brands &amp; sponsors</p>
-      <h2 class="h2 rv">Meet the athletes shaping the future.</h2>
-      <p class="lead rv">VYRGON aims to help brands discover MMA athletes and explore partnerships that align with their goals, audiences, and values.</p>
-      <ul class="ticks rv">
-        <li>Discover athletes relevant to a brand.</li>
-        <li>Explore potential sponsorship opportunities.</li>
-        <li>Communicate campaign requirements.</li>
-        <li>Build relationships within the MMA community.</li>
-      </ul>
-      <a class="btn btn-ghost rv" href="#interest" data-audience="Brand / Sponsor">Explore partnerships</a>
-      <p class="note rv">VYRGON is pre-launch. Registering interest is a way to start the conversation about future partnerships; it is not a live marketplace.</p>
-    </div>
-    <div class="ph rv"><!-- Free Unsplash photo (Unsplash License). Swap for VYRGON photography when available. -->
-      <svg class="fb" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="g2" cx="50%" cy="86%" r="45%"><stop offset="0" stop-color="#F4512A" stop-opacity=".9"/><stop offset="1" stop-color="#F4512A" stop-opacity="0"/></radialGradient><linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAF9F6" stop-opacity=".5"/><stop offset="1" stop-color="#F4512A" stop-opacity=".12"/></linearGradient></defs><rect width="400" height="500" fill="#101010"/><path d="M200 0L80 440H320z" fill="url(#beam)" opacity=".5"/><ellipse cx="200" cy="440" rx="190" ry="46" fill="url(#g2)"/><g fill="#060606" stroke="#060606" stroke-linecap="round" stroke-linejoin="round"><circle cx="196" cy="170" r="32" stroke="none"/><path d="M136 232q60-24 120 0l-14 150h-92z" stroke-width="6"/><path d="M254 238L296 160M296 160L292 92" stroke-width="28" fill="none"/><circle cx="292" cy="76" r="30" stroke="none"/><path d="M146 244L120 336" stroke-width="30" fill="none"/><circle cx="116" cy="352" r="24" stroke="none"/><path d="M176 380L150 470M218 380L246 470" stroke-width="40" fill="none"/></g></svg>
-      <img src="assets/cage.jpg" alt="Fighters standing inside an MMA cage" width="1000" height="1250" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1680022702604-292f21514497?auto=format&fit=crop&w=1000&q=75'">
-      <span class="phtag">Photo: Redd Francisco / Unsplash</span></div>
-  </div>
-</section>
-
-<!-- ABOUT / ECOSYSTEM -->
-<section class="dark pad" id="about">
+<!-- APP SHOWCASE -->
+<section class="pad show" id="app">
   <div class="wrap">
-    <p class="eyebrow rv">About</p>
-    <h2 class="h2 rv" style="max-width:16ch">One sport. A community of opportunity.</h2>
-    <p class="lead rv">VYRGON is an India-first MMA and combat sports platform. It is being designed to make the MMA ecosystem more connected and discoverable, bringing together:</p>
-    <div class="eco">
-      <div class="rv"><small>01</small>Fighters</div>
-      <div class="rv"><small>02</small>Fans</div>
-      <div class="rv"><small>03</small>Brands &amp; sponsors</div>
-      <div class="rv"><small>04</small>Event organisers</div>
-      <div class="rv"><small>05</small>Academies &amp; coaches</div>
+    <p class="eyebrow rv">The app</p>
+    <h2 class="h2 rv">One app. <span class="o">Every fighter.</span></h2>
+    <p class="lead rv">Pick a feature to see how the planned screens work. One app for fighters everywhere, not a separate app for each country.</p>
+    <div class="grid">
+      <div class="fl-list" role="tablist" aria-label="App features" id="featList">
+        <button class="ft" role="tab" aria-selected="true" data-screen="discover" id="t-discover" aria-controls="showScreen"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><h3>Discover Fighters <em>Coming soon</em></h3><p>Search athletes by country, weight class and discipline, and follow the fighters you believe in.</p></button>
+        <button class="ft" role="tab" aria-selected="false" data-screen="explore" id="t-explore" aria-controls="showScreen"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><h3>Explore MMA <em>Coming soon</em></h3><p>Events, academies, coaches and athletes in one place, so you can find your next fight or your next gym.</p></button>
+        <button class="ft" role="tab" aria-selected="false" data-screen="connect" id="t-connect" aria-controls="showScreen"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/><path d="M11 12h2"/></svg></span><h3>Connect with brands <em>Coming soon</em></h3><p>A pathway for fighters and potential sponsors to find each other and explore partnerships. We can&rsquo;t promise deals, but we can help the right people meet.</p></button>
+        <button class="ft" role="tab" aria-selected="false" data-screen="profile" id="t-profile" aria-controls="showScreen"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span><h3>Build your presence <em>Coming soon</em></h3><p>A profile that shows who you are: your record, your highlights and how to reach you professionally.</p></button>
+      </div>
+      <div class="showphone">
+        <div class="ringglow2"></div>
+        <div class="phone" id="showScreen" role="tabpanel" aria-live="polite"><div class="screen"><div class="notch"></div><div class="sb"><span>9:41</span><span><b></b><b></b></span></div>
+          <div class="pg on" data-screen="discover"></div><div class="pg" data-screen="explore"></div><div class="pg" data-screen="connect"></div><div class="pg" data-screen="profile"></div>
+        </div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PRELAUNCH -->
-<section class="pre pad" id="prelaunch">
+<!-- AUDIENCE -->
+<section class="pad" id="for">
   <div class="wrap">
-    <p class="eyebrow rv" style="justify-content:center;color:#fff">Coming soon</p>
-    <h2 class="h2 rv">The next chapter starts here.</h2>
-    <p class="lead rv">VYRGON is in development. We're preparing to bring a new platform to the MMA community, starting with India. Join the early-interest list to follow our progress and hear about launch updates.</p>
-    <a class="btn btn-primary rv" href="#interest">Join the early list</a>
-    <p class="rv" style="margin-top:18px;font-size:.9rem">Be among the first to hear when VYRGON is ready.</p>
-    <!-- Future: set PLATFORM_LINKS in CONFIG below to reveal real store buttons here. -->
-    <div id="storeLinks" class="btns" hidden></div>
+    <p class="eyebrow rv">Who it&rsquo;s for</p>
+    <h2 class="h2 rv">One community. <span class="o">Many roles.</span></h2>
+    <div class="aud-tabs rv" role="tablist" aria-label="Choose your role" id="audTabs"></div>
+    <div id="audPanels"></div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow rv">What we stand for</p>
+    <h2 class="h2 rv">Built on <span class="o">trust.</span></h2>
+    <div class="pr">
+      <div class="rv"><h3>Fighters first</h3><p>The platform is designed around athletes: their story, their control and their career.</p></div>
+      <div class="rv"><h3>You stay in control</h3><p>Planned so that your contact details stay private until you choose to accept an enquiry.</p></div>
+      <div class="rv"><h3>Honest profiles</h3><p>We plan a verification badge, so brands and organisers know who they are talking to.</p></div>
+      <div class="rv"><h3>No betting. Ever.</h3><p>VYRGON is not a betting or gambling platform. It is built for opportunity, not odds.</p></div>
+    </div>
   </div>
 </section>
 
 <!-- FORM -->
-<section class="pad" id="interest">
+<section class="pad form-sec" id="interest">
   <div class="wrap form-wrap">
     <div>
       <p class="eyebrow rv">Early list</p>
-      <h2 class="h2 rv">Be part of what's next.</h2>
-      <p class="lead rv">Tell us a little about yourself and the role you want to play in the future of MMA.</p>
+      <h2 class="h2 rv">Be part of what&rsquo;s <span class="o">next.</span></h2>
+      <p class="lead rv">Tell us a little about yourself and the role you want to play in the future of MMA. We&rsquo;ll send VYRGON updates as we build.</p>
+      <p class="lead rv" style="font-size:.95rem;color:var(--dim)">Joining the early list is free and doesn&rsquo;t create an account.</p>
     </div>
     <form id="form" class="rv" novalidate>
       <div class="two">
@@ -417,116 +497,241 @@ footer h4{color:#fff}
       <div class="two">
         <div class="f"><label for="role">I am a <i>*</i></label>
           <select id="role" name="role" required>
-            <option value="">Select one…</option>
+            <option value="">Select one&hellip;</option>
             <option>Fighter / Athlete</option><option>Fan</option><option>Brand / Sponsor</option>
             <option>Event Organiser</option><option>Academy / Coach</option><option>Other</option>
           </select><div class="err" id="e-role"></div></div>
-        <div class="f"><label for="city">City or state <small style="text-transform:none;letter-spacing:0;color:var(--grey)">(optional)</small></label><input type="text" id="city" name="city" autocomplete="address-level2"></div>
+        <div class="f"><label for="city">City or state <small style="text-transform:none;letter-spacing:0;color:var(--dim)">(optional)</small></label><input type="text" id="city" name="city" autocomplete="address-level2"></div>
       </div>
-      <div class="f"><label for="msg">Message <small style="text-transform:none;letter-spacing:0;color:var(--grey)">(optional)</small></label><textarea id="msg" name="message" maxlength="1000"></textarea></div>
+      <div class="f"><label for="msg">Message <small style="text-transform:none;letter-spacing:0;color:var(--dim)">(optional)</small></label><textarea id="msg" name="message" maxlength="1000"></textarea></div>
       <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-      <div class="consent"><input type="checkbox" id="consent" name="consent" required><label for="consent" style="text-transform:none;letter-spacing:0;font-family:var(--body);font-size:.85rem;margin:0">I agree to submit my details to VYRGON so they can contact me with VYRGON-related updates. See the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. <i>*</i></label></div>
+      <div class="consent"><input type="checkbox" id="consent" name="consent" required><label for="consent">I agree to submit my details to VYRGON so they can contact me with VYRGON-related updates. See the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. <i>*</i></label></div>
       <div class="err" id="e-consent" style="margin:-14px 0 14px"></div>
-      <button class="btn btn-orange" type="submit" id="submit">Submit my interest</button>
+      <button class="btn btn-o" type="submit" id="submit">Submit my interest</button>
       <div class="status" id="status" role="status" aria-live="polite"></div>
     </form>
   </div>
 </section>
 
-<!-- FINAL -->
-<section class="final pad" id="join">
+<!-- FAQ -->
+<section class="pad" id="faq">
   <div class="wrap">
-    <h2 class="h2 rv">The future of MMA is built together.</h2>
-    <p class="lead rv">Help shape a more connected future for combat sports. Join VYRGON as we work to bring athletes, fans, and opportunities closer together.</p>
-    <a class="btn btn-primary rv" href="#interest">Join the VYRGON movement</a>
+    <p class="eyebrow rv" style="text-align:center">FAQ</p>
+    <h2 class="h2 rv" style="text-align:center">Questions, <span class="o">answered.</span></h2>
+    <div class="faq rv">
+      <details><summary>What is VYRGON?</summary><p>VYRGON is an India-first MMA platform being built to help fighters get discovered, connect with brands, organisers and gyms, and grow their careers. It&rsquo;s designed as one app for the world.</p></details>
+      <details><summary>When does the app launch?</summary><p>The app is in development and we haven&rsquo;t announced a launch date. Join the early list and we&rsquo;ll tell you first.</p></details>
+      <details><summary>Is it free?</summary><p>Pricing hasn&rsquo;t been announced yet. Joining the early list is free and doesn&rsquo;t create an account or commit you to anything.</p></details>
+      <details><summary>Which countries will it work in?</summary><p>We&rsquo;re starting in India and designing the app for fighters everywhere, with different languages and units planned.</p></details>
+      <details><summary>Who can use VYRGON?</summary><p>Fighters and athletes, brands and sponsors, event organisers, gyms and coaches, and fans of combat sports.</p></details>
+      <details><summary>Is VYRGON a betting platform?</summary><p>No. VYRGON is not a betting or gambling platform and will not offer betting in any form.</p></details>
+      <details><summary>How will my information be used?</summary><p>Only to send you VYRGON updates and understand who is interested. Read the <a href="privacy.html">Privacy Policy</a> for details.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="pad closing">
+  <div class="ringglow"></div>
+  <div class="wrap">
+    <h2 class="h2 rv">Talent deserves to be <span class="o">seen.</span></h2>
+    <p class="lead rv" style="margin-inline:auto">Follow the build and be first in when VYRGON opens.</p>
+    <div class="btns rv" style="display:flex;justify-content:center;margin-top:32px"><a class="btn btn-o" href="#interest">Join the early list</a></div>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="foot">
-      <div>
-        <a href="#home" class="logo"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h5l4 10 4-10h5l-7 15h-4z" fill="#171717"/></svg></span>VYRGON</a>
-        <p style="max-width:34ch">Powering Fighters. Building Champions. An India-first MMA platform, currently in development.</p>
-        <p style="margin-top:16px"><a href="#interest" class="btn btn-orange" style="padding:12px 22px;min-height:44px;font-size:.8rem">Join the early list</a></p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="#mission">Our Mission</a></li><li><a href="#fighters">For Fighters</a></li>
-          <li><a href="#platform">The Platform</a></li><li><a href="#brands">For Brands</a></li><li><a href="#about">About</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul>
-        <ul id="socials"></ul>
+    <div class="fgrid">
+      <div><img src="assets/logo.svg" alt="VYRGON" width="180" height="26" style="height:26px;width:auto"><p>An India-first MMA platform. Powering Fighters. Building Champions.</p></div>
+      <div class="fcols">
+        <div><h4>Explore</h4><ul><li><a href="#how">How it works</a></li><li><a href="#app">The app</a></li><li><a href="#for">Who it&rsquo;s for</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+        <div><h4>Follow</h4><ul id="socials"><li><a href="#interest">Join the early list</a></li></ul></div>
       </div>
     </div>
-    <div class="copy"><span>© <span id="yr"></span> VYRGON. All rights reserved.</span><span>Coming soon.</span></div>
+    <div class="legal"><span>&copy; <span id="yr"></span> VYRGON. All rights reserved.</span><span>App screens are design previews with sample content. Photos on Unsplash by Rajat Kashyap, Marlon Schmeiski, Farkas Mario, Redd Francisco and Anastase Maragos. Features are planned and may change.</span></div>
   </div>
 </footer>
 
 <script>
-/* ============ CONFIG — edit here (all integration points live in this block) ============ */
+/* ============ CONFIG: edit here (all integration points live in this block) ============ */
 const CONFIG = {
-  // Interest form: URL of a real form service / serverless endpoint that accepts a JSON POST
-  // (e.g. a Formspree/Basin/Getform endpoint or your own API). Leave "" until connected.
+  // Early-list form: URL of a real form service that accepts a JSON POST (e.g. a Formspree endpoint).
+  // Leave "" until connected. While empty, the form tells visitors honestly that nothing was sent.
   FORM_ENDPOINT: "",
-  // Store links — leave "" until official URLs exist. When filled, buttons appear in #prelaunch.
+  // Store links: leave "" until the official listings exist. When filled, the "Coming soon" badges become real links.
   PLATFORM_LINKS: { appStore: "", googlePlay: "" },
-  // Social links — only entries with a real URL are rendered in the footer.
-  SOCIALS: { Instagram: "", YouTube: "", X: "", Facebook: "" },
-  // Contact email — not supplied yet; intentionally unused.
-  CONTACT_EMAIL: ""
+  // Social links: only entries with a real URL are shown in the footer.
+  SOCIALS: { Instagram: "", YouTube: "", X: "", Facebook: "" }
 };
-/* ========================================================================================= */
+/* ======================================================================================== */
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 $('#yr').textContent=new Date().getFullYear();
 
-// Platform + social links (render only if configured)
-(()=>{const L=CONFIG.PLATFORM_LINKS,box=$('#storeLinks');
-  [['Download on the App Store',L.appStore],['Get it on Google Play',L.googlePlay]].forEach(([t,u])=>{
-    if(u){const a=document.createElement('a');a.className='btn btn-primary';a.href=u;a.textContent=t;box.appendChild(a);box.hidden=false}});
-  const ul=$('#socials');Object.entries(CONFIG.SOCIALS).forEach(([n,u])=>{if(u){const li=document.createElement('li'),a=document.createElement('a');a.href=u;a.textContent=n;a.rel='noopener';li.appendChild(a);ul.appendChild(li)}});
-})();
+/* ---------- app screens (sample content, design previews) ---------- */
+const I={
+ search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+ tick:'<svg class="tick" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#F4512A"/><path d="m7 12.5 3.2 3.2L17 9" fill="none" stroke="#171717" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="11" width="16" height="10" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
+ d:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+ e:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18"/></svg>',
+ c:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/></svg>',
+ p:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>'
+};
 
-// Nav: solid on scroll, mobile menu, active link
+/* avatars: illustrated fighter portraits and brand marks (placeholders until real photos / logos) */
+const fighter=(bg,skin,shirt,hair,extra)=>`<svg viewBox="0 0 100 100"><rect width="100" height="100" fill="${bg}"/><circle cx="50" cy="104" r="46" fill="rgba(0,0,0,.18)"/><path d="M6 100Q8 72 50 68Q92 72 94 100Z" fill="${shirt}"/><rect x="43" y="56" width="14" height="16" rx="5" fill="${skin}"/><ellipse cx="32.5" cy="44" rx="3.2" ry="5" fill="${skin}"/><ellipse cx="67.5" cy="44" rx="3.2" ry="5" fill="${skin}"/><ellipse cx="50" cy="43" rx="17.5" ry="20.5" fill="${skin}"/>${hair}<circle cx="43" cy="44" r="1.6" fill="#1b1b1b"/><circle cx="57" cy="44" r="1.6" fill="#1b1b1b"/><path d="M45 54q5 3 10 0" stroke="rgba(0,0,0,.35)" stroke-width="1.6" fill="none" stroke-linecap="round"/>${extra}</svg>`;
+const brandMark=(bg,inner)=>`<svg viewBox="0 0 100 100"><rect width="100" height="100" fill="${bg}"/>${inner}</svg>`;
+const AV={
+ rm:`<span class="av">${fighter('#F4512A','#a8693f','#171717','<path d="M31 40Q34 20 50 20Q66 20 69 40Q60 31 50 31Q40 31 31 40Z" fill="#1b1b1b"/><rect x="31" y="35" width="38" height="6" rx="3" fill="#FAF9F6"/>','')}</span>`,
+ ks:`<span class="av">${fighter('#3b3b3b','#8a5632','#F4512A','<path d="M31 42Q30 20 50 20Q70 20 69 42Q66 30 50 29Q34 30 31 42Z" fill="#161616"/>','<path d="M34 50Q36 66 50 67Q64 66 66 50Q62 59 50 59Q38 59 34 50Z" fill="#161616"/>')}</span>`,
+ an:`<span class="av">${fighter('#d9d7d2','#c58a5b','#2b2b2b','<path d="M32 42Q30 21 50 21Q70 21 68 42Q64 29 50 30Q36 29 32 42Z" fill="#241a14"/>','')}</span>`,
+ iw:`<span class="av">${brandMark('#2b2b2b','<rect x="22" y="44" width="10" height="22" rx="3" fill="#F4512A"/><rect x="68" y="44" width="10" height="22" rx="3" fill="#F4512A"/><rect x="32" y="50" width="36" height="10" fill="#FAF9F6"/><rect x="14" y="49" width="8" height="12" rx="2" fill="#FAF9F6"/><rect x="78" y="49" width="8" height="12" rx="2" fill="#FAF9F6"/>')}</span>`,
+ na:`<span class="av">${brandMark('#FAF9F6','<path d="M50 22 76 36v28L50 78 24 64V36Z" fill="#171717"/><path d="M50 32l16 9v18L50 68 34 59V41Z" fill="#F4512A"/>')}</span>`,
+ ic:`<span class="av">${brandMark('#F4512A','<circle cx="50" cy="50" r="24" fill="none" stroke="#171717" stroke-width="7"/><path d="M50 26v48M26 50h48" stroke="#171717" stroke-width="5"/>')}</span>`
+};
+
+/* real photos: tries assets/avatars/<name>.jpg first, then a free Unsplash portrait, then the drawn avatar */
+const NEU='<span class="av" style="display:grid;place-items:center;background:#262626;color:#6f6d68"><svg viewBox="0 0 24 24" style="width:60%;height:60%" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span>';
+const AVS={rm:NEU,ks:NEU,an:NEU};
+const UN=id=>`https://images.unsplash.com/${id}?auto=format&fit=crop&crop=faces&w=240&h=240&q=80`;
+const PH={rm:['rohan','photo-1681203888755-bd61fe3558eb'],ks:['kabir','photo-1688141401462-d2ef7c292b0e'],an:['aarav','photo-1645458314292-af7e370a9b52']};
+Object.keys(PH).forEach(k=>{AV[k]=`<span class="av"><img src="assets/avatars/${PH[k][0]}.jpg" data-k="${k}" data-u="${UN(PH[k][1])}" data-s="0" alt="" referrerpolicy="no-referrer" onerror="avFail(this)"></span>`});
+function avFail(i){if(i.dataset.s==='0'){i.dataset.s='1';i.src=i.dataset.u}else{i.parentNode.outerHTML=AVS[i.dataset.k]}}
+/* ---- photos: assets/photos/<name>.jpg first, then a free Unsplash photo, then a designed fallback ---- */
+const PHOTO={
+  rohan:['photo-1645458314292-af7e370a9b52','faces'],kabir:['photo-1688141401462-d2ef7c292b0e','faces'],aarav:['photo-1681203888755-bd61fe3558eb','faces'],dev:['photo-1787750440263-96f8eae1eda2','faces'],
+  fightnight:['photo-1765302816396-975b6ca73b0a','entropy'],championship:['photo-1773289338368-e3683a97bc74','entropy'],ring:['photo-1619369232549-2deddaf62454','entropy']
+};
+const IMG=k=>`<img src="assets/photos/${k}.jpg" alt="" data-u="https://images.unsplash.com/${PHOTO[k][0]}?auto=format&fit=crop&crop=${PHOTO[k][1]}&w=640&h=640&q=75" data-s="0" referrerpolicy="no-referrer" onerror="imgFail(this)">`;
+function imgFail(i){if(i.dataset.s==='0'){i.dataset.s='1';i.src=i.dataset.u}else{i.remove()}}
+const IC={
+ back:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg>',
+ share:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 11 7.6-4M8.2 13l7.6 4"/></svg>',
+ arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+ flt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M7 12h10M10 17h4"/></svg>',
+ pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+ scale:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v16M5 8h14M5 8l-3 7a3 3 0 0 0 6 0Zm14 0-3 7a3 3 0 0 0 6 0Z"/></svg>',
+ rec:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 4h8v5a4 4 0 0 1-8 0ZM12 13v4M8 20h8"/></svg>',
+ home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4Z"/></svg>',
+ cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>',
+ chat:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4Z"/></svg>',
+ user:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>'
+};
+const P=(id,w,h,c)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&crop=${c||'entropy'}&w=${w}&h=${h}&q=75`;
+const mkSvg=k=>AVS[k].replace('<span class="av">','').replace('</span>','').replace('<svg viewBox="0 0 100 100"','<svg class="under" preserveAspectRatio="xMidYMid slice" viewBox="0 0 100 100"');
+/* big photos: tries assets/photos/<key>.jpg, then a free Unsplash photo, then the dark gradient art */
+const ph=(key,id,inner,o={})=>`<div class="pic ${o.cls||''}" style="${o.style||''}">${o.under||''}<img src="assets/photos/${key}.jpg" data-u="${P(id,o.w||640,o.h||480,o.crop)}" data-s="0" alt="" referrerpolicy="no-referrer" onerror="phFail(this)"><div class="sh"></div><div class="ov">${inner}</div></div>`;
+function phFail(i){if(i.dataset.s==='0'){i.dataset.s='1';i.src=i.dataset.u}else i.remove()}
+const MARK='<svg class="mk" viewBox="0 0 369 195" fill="#F4512A"><path d="M155.037 168.502L213.748 194.35L319.242 26.7859C321.286 23.5404 324.219 20.9508 327.693 19.3258L369.005 0H272.405C265.54 0 259.155 3.52071 255.491 9.32605L155.037 168.502Z"/><path d="M213.968 168.502L155.257 194.35L49.7624 26.7859C47.7191 23.5404 44.7858 20.9508 41.312 19.3258L.000137329 0H96.6C103.465 0 109.85 3.52071 113.514 9.32605L213.968 168.502Z"/></svg>';
+const ic=(p)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const ICN={home:ic('<path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/>'),cal:ic('<rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/>'),link:ic('<circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/>'),user:ic('<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>'),back:ic('<path d="M15 5l-7 7 7 7"/>'),share:ic('<path d="M12 3v12M7 8l5-5 5 5M5 14v6h14v-6"/>'),heart:ic('<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/>'),ruler:ic('<path d="M3 17 17 3l4 4L7 21z"/><path d="M8 12l2 2M11 9l2 2M14 6l2 2"/>'),bolt:ic('<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>')};
+const tabs=a=>`<div class="tabs">${[['d','home'],['e','cal'],['c','link'],['p','user']].map(([k,n])=>`<div class="${k===a?'on':''}">${ICN[n]}</div>`).join('')}</div>`;
+const stack=`<div class="stk">${AV.rm}${AV.ks}${AV.an}<span class="t">+18 going</span></div>`;
+const SCREENS={
+ discover:`<div class="hd">${MARK}${AV.rm}</div>
+  <div class="hi">Hi, Champ</div>
+  <div class="hdl">Find your<br>next <span class="o">fight.</span></div>
+  <div class="sch">${I.search}<span>Search fighters, gyms, events</span><i class="caret"></i></div>
+  <div class="chips"><b class="a">All</b><b>Fighters</b><b>Events</b><b>Gyms</b></div>
+  ${ph('event-fight-night','photo-1680022702604-292f21514497',`<div class="tp"><span class="dchip"><b>14</b>DEC</span><span class="live">Open</span></div><div><div class="etitle">Open Fight Night</div><div class="esub">Mumbai &middot; Fighters wanted</div><div class="erow">${stack}<span class="gob">View</span></div></div>`,{style:'height:20.5em',w:760,h:720})}
+  ${tabs('d')}`,
+ explore:`<div class="tbar"><span class="rb">${ICN.back}</span><span class="tt">Explore MMA</span><span class="rb">${ICN.share}</span></div>
+  <div class="sch">${I.search}<span>Search events, gyms, coaches</span></div>
+  <div class="seg"><b class="a">Upcoming</b><b>Past</b></div>
+  ${ph('event-championship','photo-1773289337835-7703c1f03d59',`<div class="tp"><span class="dchip"><b>02</b>JAN</span><span class="live">Registration open</span></div><div><div class="etitle">Amateur Championship</div><div class="esub">Delhi &middot; 4 weight classes</div></div>`,{style:'height:15em',w:760,h:560})}
+  ${ph('event-grappling','photo-1773289338145-5051870007e2',`<div class="tp"><span class="dchip"><b>21</b>JAN</span></div><div><div class="etitle">Grappling Open</div><div class="esub">Bengaluru</div></div>`,{style:'height:11em',w:760,h:480})}
+  ${tabs('e')}`,
+ connect:`<div class="tbar"><span class="tt" style="font:400 1.75em var(--disp);text-transform:uppercase">Enquiries</span><span class="rb">${ICN.bolt}</span></div>
+  <div class="seg"><b class="a">Received</b><b>Sent</b></div>
+  <div class="eq"><div class="hd" style="gap:.8em">${AV.na}<div class="tx" style="flex:1;min-width:0"><div class="nm">Northline Apparel</div><div class="sm">Sponsorship enquiry</div></div><span class="pill">New</span></div><p>We&rsquo;d like to talk about a six-month partnership.</p><div class="acts"><b class="p">Accept</b><b>Decline</b></div></div>
+  <div class="lockrow"><div class="tx"><b>Contact details</b><small>Hidden until you accept</small></div><span class="sw"></span></div>
+  <div class="eq"><div class="hd" style="gap:.8em">${AV.ic}<div class="tx" style="flex:1;min-width:0"><div class="nm">Iron Cage Events</div><div class="sm">Bout invitation</div></div><span class="pill ok">Accepted</span></div></div>
+  <div class="eq"><div class="hd" style="gap:.8em">${AV.na}<div class="tx" style="flex:1;min-width:0"><div class="nm">Peak Nutrition</div><div class="sm">Sponsorship enquiry</div></div><span class="pill">New</span></div><p>Interested in your upcoming fights.</p></div>
+  ${tabs('c')}`,
+ profile:`<div class="tbar"><span class="rb">${ICN.back}</span><span class="tt">Fighter profile</span><span class="rb">${ICN.share}</span></div>
+  ${ph('fighter-rohan','photo-1681203888755-bd61fe3558eb',`<div class="tp"><span class="dchip">MMA</span><span class="live">Verified</span></div><div><div class="etitle" style="font-size:1.85em">Rohan Mehta</div><div class="esub">Bantamweight &middot; Pune, India</div></div>`,{style:'height:17em',w:760,h:700,crop:'faces'})}
+  <div class="gym">${AV.iw}<div class="tx"><div class="nm">Iron Works Academy</div><div class="sm">Training gym &middot; Pune</div></div><span class="rb">${ICN.heart}</span></div>
+  <div class="pills"><div>${ICN.bolt}<span><small>Record</small><b>12-3-0</b></span></div><div>${ICN.ruler}<span><small>Weight</small><b>61 kg</b></span></div></div>
+  <div class="abt"><h4>About the fighter</h4><p>Wrestling-based bantamweight, open to fight and sponsor enquiries.</p></div>
+  <div class="cta2"><span>Send enquiry</span><i>&rarr;</i></div>`
+};
+$$('.pg[data-screen]').forEach(p=>p.innerHTML=SCREENS[p.dataset.screen]);
+
+/* hero: cycle screens */
+const heroPgs=$$('#heroScreen .pg');let hi=0;
+const prog=document.createElement('div');prog.className='prog';prog.innerHTML=heroPgs.map(()=>'<i></i>').join('');
+$('#heroScreen').closest('.phone').appendChild(prog);
+const DUR=3800;
+function heroShow(i){hi=i;heroPgs.forEach((p,k)=>p.classList.toggle('on',k===i));
+  [...prog.children].forEach((d,k)=>{d.classList.remove('a');if(k===i){void d.offsetWidth;d.classList.add('a')}});}
+heroShow(0);
+if(!reduce)setInterval(()=>heroShow((hi+1)%heroPgs.length),DUR);
+else{prog.style.display='none'}
+
+/* hero: gentle pointer parallax */
+const stage=$('#stage');
+if(!reduce&&matchMedia('(hover:hover)').matches){
+  stage.addEventListener('pointermove',e=>{const r=stage.getBoundingClientRect();
+    stage.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));
+    stage.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))});
+  stage.addEventListener('pointerleave',()=>{stage.style.setProperty('--mx',0);stage.style.setProperty('--my',0)});
+}
+
+/* showcase tabs */
+const ft=$$('.ft'),shPgs=$$('#showScreen .pg');let userPicked=false;
+function pick(name){ft.forEach(b=>b.setAttribute('aria-selected',b.dataset.screen===name));shPgs.forEach(p=>p.classList.toggle('on',p.dataset.screen===name))}
+ft.forEach(b=>b.addEventListener('click',()=>{userPicked=true;pick(b.dataset.screen)}));
+$('#featList').addEventListener('keydown',e=>{if(!['ArrowDown','ArrowUp'].includes(e.key))return;e.preventDefault();
+  const i=ft.findIndex(b=>b.getAttribute('aria-selected')==='true'),n=ft[(i+(e.key==='ArrowDown'?1:ft.length-1))%ft.length];userPicked=true;pick(n.dataset.screen);n.focus()});
+if(!reduce){let k=0;const sec=$('#app');let vis=false;new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(sec);
+  setInterval(()=>{if(userPicked||!vis)return;k=(k+1)%ft.length;pick(ft[k].dataset.screen)},4800)}
+
+/* audience tabs */
+const AUD=[
+ {k:'Fighters',h:'Be seen beyond your gym.',role:'Fighter / Athlete',cta:'Join as a fighter',pts:['Build a profile with your record, discipline, weight class and highlights.','Be discovered by brands, organisers and gyms.','Choose who can contact you. Your details stay private until you accept.']},
+ {k:'Brands',h:'Find athletes that fit your brand.',role:'Brand / Sponsor',cta:'Join as a brand',pts:['Search fighters by country, weight class and discipline.','Send a clear enquiry in one place.','Look for the planned verification badge to know who you are talking to.']},
+ {k:'Organisers',h:'Find fighters for your card.',role:'Event Organiser',cta:'Join as an organiser',pts:['Discover fighters by weight class and region.','Reach out through the app.','Show your upcoming events to the community.']},
+ {k:'Gyms & coaches',h:'Put your academy on the map.',role:'Academy / Coach',cta:'Join as a gym or coach',pts:['A page for your gym, your coaches and the fighters you train.','Be found by new students and fighters.','Share your athletes’ progress with a wider audience.']},
+ {k:'Fans',h:'Follow the fighters you believe in.',role:'Fan',cta:'Join as a fan',pts:['Discover athletes from across India and beyond.','Explore events, gyms and coaches.','Follow journeys, not just fight nights.']}
+];
+const chk='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16 9.5"/></svg>';
+AUD.forEach((a,i)=>{
+  const b=document.createElement('button');b.role='tab';b.id='at'+i;b.textContent=a.k;b.setAttribute('aria-selected',i===0);b.setAttribute('aria-controls','ap'+i);$('#audTabs').appendChild(b);
+  const p=document.createElement('div');p.className='aud-panel';p.id='ap'+i;p.setAttribute('role','tabpanel');p.setAttribute('aria-labelledby','at'+i);p.hidden=i!==0;
+  p.innerHTML=`<div><h3>${a.h}</h3><a class="btn btn-o" href="#interest" data-role="${a.role}">${a.cta}</a></div><ul>${a.pts.map(t=>`<li>${chk}<span>${t}</span></li>`).join('')}</ul>`;
+  $('#audPanels').appendChild(p);
+  b.addEventListener('click',()=>{$$('#audTabs button').forEach((x,k)=>{x.setAttribute('aria-selected',k===i);$('#ap'+k).hidden=k!==i})});
+});
+$('#audTabs').addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft'].includes(e.key))return;const bs=$$('#audTabs button'),i=bs.findIndex(b=>b===document.activeElement);if(i<0)return;const n=bs[(i+(e.key==='ArrowRight'?1:bs.length-1))%bs.length];n.focus();n.click()});
+$$('[data-role]').forEach(a=>a.addEventListener('click',()=>{$('#role').value=a.dataset.role}));
+
+/* store badges + socials (render real only if configured) */
+Object.entries({appStore:'Download on the App Store',googlePlay:'Get it on Google Play'}).forEach(([k,t])=>{
+  const u=CONFIG.PLATFORM_LINKS[k];if(!u)return;const el=document.querySelector(`[data-store=${k}]`);
+  const a=document.createElement('a');a.className='store';a.href=u;a.rel='noopener';a.innerHTML=el.innerHTML;a.querySelector('.sl').textContent=t;el.replaceWith(a)});
+Object.entries(CONFIG.SOCIALS).forEach(([n,u])=>{if(!u)return;const li=document.createElement('li'),a=document.createElement('a');a.href=u;a.textContent=n;a.rel='noopener';li.appendChild(a);$('#socials').appendChild(li)});
+
+/* nav */
 const nav=$('#nav'),burger=$('#burger'),menu=$('#menu');
-addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40),{passive:true});
-function setMenu(o){menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Close menu':'Open menu')}
+const onScroll=()=>nav.classList.toggle('solid',scrollY>30);onScroll();addEventListener('scroll',onScroll,{passive:true});
+function setMenu(o){menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Close menu':'Open menu');document.body.style.overflow=o?'hidden':''}
 burger.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
 menu.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('open')){setMenu(false);burger.focus()}});
-addEventListener('resize',()=>{if(innerWidth>900)setMenu(false)});
-const secs=['home','mission','fighters','platform','brands','about'].map(id=>document.getElementById(id));
-new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('.links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'}).observe&&secs.forEach(s=>s&&new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('.links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'}).observe(s));
+addEventListener('resize',()=>{if(innerWidth>960)setMenu(false)});
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('.links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['how','app','for','faq'].forEach(id=>spy.observe(document.getElementById(id)));
 
-// Scroll reveals
-if(reduce){$$('.rv').forEach(e=>e.classList.add('in'))}
-else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});$$('.rv').forEach(e=>io.observe(e))}
+/* scroll reveals (content is visible without JS or when motion is reduced) */
+if(reduce||!('IntersectionObserver' in window)){$$('.rv').forEach(e=>e.classList.add('in'))}
+else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+  $$('.rv').forEach(e=>{const r=e.getBoundingClientRect();if(r.top<innerHeight)setTimeout(()=>e.classList.add('in'),80);else io.observe(e)})}
 
-// Hero video + entrance
-const vid=$('#glowVid');
-if(!reduce){
-  vid.src=vid.dataset.src;
-  vid.addEventListener('loadeddata',()=>{vid.classList.add('on');vid.play().catch(()=>{})},{once:true});
-  const ease='cubic-bezier(.2,.7,.2,1)',f=(el,kf,o)=>el.animate(kf,{duration:700,easing:ease,fill:'backwards',...o});
-  f($('.logo'),[{opacity:0},{opacity:1}],{delay:0});
-  $$('.links li,.nav-cta,.burger').forEach((el,i)=>f(el,[{opacity:0},{opacity:1}],{delay:150+i*60}));
-  f($('#hBadge'),[{opacity:0,transform:'scaleX(.2)'},{opacity:1,transform:'none'}],{delay:350});
-  $$('#hH .ln').forEach((el,i)=>f(el,[{transform:'translateY(110%)'},{transform:'none'}],{delay:600+i*150,duration:900}));
-  f($('#hSub'),[{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'none'}],{delay:1100});
-  f($('#hTag'),[{opacity:0},{opacity:1}],{delay:1250});
-  $$('#hBtns .btn').forEach((el,i)=>f(el,[{opacity:0,transform:'translateY(22px)'},{opacity:1,transform:'none'}],{delay:1300+i*150}));
-}else{vid.remove()}
-
-// Audience preselect
-$$('[data-audience]').forEach(a=>a.addEventListener('click',()=>{$('#role').value=a.dataset.audience}));
-
-// Form
+/* early-list form */
 const form=$('#form'),btn=$('#submit'),st=$('#status');
 const showSt=(c,t)=>{st.className='status show '+c;st.textContent=t};
 const setErr=(id,m)=>{const el=$('#e-'+id);el.textContent=m||'';const inp=$('#'+id);if(inp)inp.setAttribute('aria-invalid',!!m)};
@@ -539,13 +744,13 @@ form.addEventListener('submit',async e=>{
   setErr('role',d.role?'':'Please choose one.');if(!d.role)ok=false;
   $('#e-consent').textContent=d.consent?'':'Please confirm consent to continue.';if(!d.consent)ok=false;
   if(!ok){st.className='status';$('form [aria-invalid=true]')?.focus();return}
-  if(d.website)return; // honeypot
-  if(!CONFIG.FORM_ENDPOINT){showSt('bad','Sign-ups aren\u2019t connected yet, so your details were NOT sent or saved. Please check back soon.');return}
+  if(d.website)return; /* honeypot */
+  if(!CONFIG.FORM_ENDPOINT){showSt('bad','Sign-ups aren’t connected yet, so your details were NOT sent or saved. Please check back soon.');return}
   sending=true;btn.disabled=true;btn.textContent='Sending…';showSt('load','Sending your details…');
   try{
     const r=await fetch(CONFIG.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({name:d.name.trim(),email:d.email.trim(),role:d.role,city:d.city.trim(),message:d.message.trim(),consent:true,source:'vyrgon-website'})});
     if(!r.ok)throw new Error(r.status);
-    showSt('ok','Thank you. Your interest has been received. We\u2019ll be in touch with VYRGON updates.');form.reset();btn.textContent='Submitted';
+    showSt('ok','Thank you. Your interest has been received. We’ll be in touch with VYRGON updates.');form.reset();btn.textContent='Submitted';
   }catch(err){showSt('bad','Something went wrong and your details were not sent. Please try again in a moment.');sending=false;btn.disabled=false;btn.textContent='Submit my interest'}
 });
 </script>
